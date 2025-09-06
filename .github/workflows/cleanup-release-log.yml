@@ -10,6 +10,7 @@ jobs:
   cleanup-log:
     if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'release'
     runs-on: ubuntu-latest
+    concurrency: cleanup-log-lock
 
     steps:
       - name: 이력 관리 레포지토리 체크아웃
