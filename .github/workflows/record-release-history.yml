@@ -22,8 +22,8 @@ jobs:
 
       - name: 로그 파일에 PR 정보 추가
         run: |
-          LOG_DIR="closet-deploy-management/pending"
-          LOG_FILE="$LOG_DIR/${{ github.repository_owner }}/${{ github.event.repository.name }}.log"
+          LOG_DIR="closet-deploy-management/pending/${{ github.repository_owner }}"
+          LOG_FILE="$LOG_DIR/${{ github.event.repository.name }}.log"
           
           mkdir -p $LOG_DIR
           
